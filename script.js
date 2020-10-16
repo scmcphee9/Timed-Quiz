@@ -4,6 +4,8 @@ var userScore = 0
 // variable for starting time of timer until end of game
 var secondsLeft = 120
 
+var questions = 
+
 
 // need event listener to start timer when start button is pushed
 
@@ -34,3 +36,7 @@ function endGame(){
 // calls timer function
 setTime()
 
+
+// hide and remove a class
+$("#question_3").addClass(".hide")
+$("#question_3").removeClass(".hide")

@@ -1,74 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--links jQuery  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- <link src = "./style.css" rel = "stylesheet"> -->
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="style.css" />
 
     <title>Tree Quiz</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Tree Quiz!</h1>
-    <div class = "time"></div>
+    <div class="time"></div>
 
-    <div class="startQuiz">
-        <h2 id="startQuiz">
-        Press start to start the tree quiz
-        </h2>
-        <button id="start">Start Game</button>
+    <div class="hide" id="startQuiz">
+      <h2 id="startQuizText">Press start to start the tree quiz</h2>
+      <button id="start">Start Game</button>
     </div>
 
-    <div class="hide" id = "question_1"></div>
-        <h4 id = "question_text">What kind of trees have leaves?</h4>
+    <div class="hide" id="question_1">
+      <h4 id="question_text">What kind of trees have leaves?</h4>
 
-            <button id="answer1">Coniferous</button>
-            <button id="answer2">Deciduous</button>
-            <button id="answer3">Fake</button>
-            <button id="answer4">Dead</button>
+      <button id="answer1">Coniferous</button>
+      <button id="answer2">Deciduous</button>
+      <button id="answer3">Fake</button>
+      <button id="answer4">Dead</button>
     </div>
 
-    <div class="hide" id = 'question_2'></div>
-        <h4 id = "question_text">Q2</h4>
+    <div class="hide" id="question_2">
+      <h4 id="question_text">What is the tallest tree on the Earth?</h4>
 
-            <button id="answer1">Coniferous</button>
-            <button id="answer2">Deciduous</button>
-            <button id="answer3">Fake</button>
-            <button id="answer4">Dead</button>
+      <button id="answer1">Quercus alba</button>
+      <button id="answer2">Metasequoia glyptostoboides</button>
+      <button id="answer3">Sequoia sempervirens</button>
+      <button id="answer4">Acer rubrum</button>
     </div>
 
-    <div class="hide" id = "question_3"></div>
-        <h4 id = "question_text">Q3</h4>
+    <div class="hide" id="question_3">
+      <h4 id="question_text">Which tree produces Acorns?</h4>
 
-        <button id="answer1">Coniferous</button>
-        <button id="answer2">Deciduous</button>
-        <button id="answer3">Fake</button>
-        <button id="answer4">Dead</button>
+      <button id="answer1">Oak</button>
+      <button id="answer2">Maple</button>
+      <button id="answer3">Pine</button>
+      <button id="answer4">Birch</button>
     </div>
 
-    <div class="hide" id = "question_4"></div>
-    <h4 id = "question_text">Q4</h4>
+    <div class="hide" id="question_4">
+      <h4 id="question_text">Which conifer loses its needles in the winter?</h4>
 
-    <button id="answer1">Coniferous</button>
-    <button id="answer2">Deciduous</button>
-    <button id="answer3">Fake</button>
-    <button id="answer4">Dead</button>
+      <button id="answer1">Thuja plicata</button>
+      <button id="answer2">Pinus Strobus</button>
+      <button id="answer3">Metasequoia glyptostoboides</button>
+      <button id="answer4">Abies fraseri</button>
     </div>
 
-    <div class="hide" id = "question_5"></div>
-    <h4 id = "question_text">Q5</h4>
+    <div class="hide" id="question_5">
+      <h4 id="question_text">Why do leaves change color in the fall?</h4>
 
-    <button id="answer1">Coniferous</button>
-    <button id="answer2">Deciduous</button>
-    <button id="answer3">Fake</button>
-    <button id="answer4">Dead</button>
+      <button id="answer1">The tree dies every year</button>
+      <button id="answer2">Their alarm clock tells them to turn</button>
+      <button id="answer3">They don't change</button>
+      <button id="answer4">Chlorophyll breaks down</button>
     </div>
 
-    
-    <script src = "script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
 
 <!-- need to make a variable that tracks score -->

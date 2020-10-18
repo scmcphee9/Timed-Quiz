@@ -14,6 +14,7 @@
     <h1>Tree Quiz!</h1>
     <div class="time"></div>
 
+    <div id="allQuestions">
     <div class="hide" id="startQuiz">
       <h2 id="startQuizText">Press start to start the tree quiz</h2>
       <button id="start">Start Game</button>
@@ -23,7 +24,7 @@
       <h4 id="question_text">What kind of trees have leaves?</h4>
 
       <button id="answer1">Coniferous</button>
-      <button id="answer2">Deciduous</button>
+      <button id="correctAnswer">Deciduous</button>
       <button id="answer3">Fake</button>
       <button id="answer4">Dead</button>
     </div>
@@ -33,17 +34,19 @@
 
       <button id="answer1">Quercus alba</button>
       <button id="answer2">Metasequoia glyptostoboides</button>
-      <button id="answer3">Sequoia sempervirens</button>
+      <button id="correctAnswer">Sequoia sempervirens</button>
       <button id="answer4">Acer rubrum</button>
+      <h1 id="rightWrong_1"></h1>
     </div>
 
     <div class="hide" id="question_3">
       <h4 id="question_text">Which tree produces Acorns?</h4>
 
-      <button id="answer1">Oak</button>
+      <button id="correctAnswer">Oak</button>
       <button id="answer2">Maple</button>
       <button id="answer3">Pine</button>
       <button id="answer4">Birch</button>
+      <h1 id="rightWrong_2"></h1>
     </div>
 
     <div class="hide" id="question_4">
@@ -51,8 +54,9 @@
 
       <button id="answer1">Thuja plicata</button>
       <button id="answer2">Pinus Strobus</button>
-      <button id="answer3">Metasequoia glyptostoboides</button>
+      <button id="correctAnswer">Metasequoia glyptostoboides</button>
       <button id="answer4">Abies fraseri</button>
+      <h1 id="rightWrong_3"></h1>
     </div>
 
     <div class="hide" id="question_5">
@@ -61,8 +65,22 @@
       <button id="answer1">The tree dies every year</button>
       <button id="answer2">Their alarm clock tells them to turn</button>
       <button id="answer3">They don't change</button>
-      <button id="answer4">Chlorophyll breaks down</button>
+      <button id="correctAnswer">Chlorophyll breaks down</button>
+      <h1 id="rightWrong_4"></h1>
     </div>
+  </div>
+
+    <div class="hide" id="question_6">
+        <h4 id="question_text">End of Quiz</h4>
+        <p id= "highScores"></p>
+  
+        <input type="text"></input>
+        <button id="submitName">Submit Name</button>
+        <h1 id="rightWrong_5"></h1>
+
+
+      </div>
+
 
     <script src="script.js"></script>
   </body>

@@ -1,12 +1,11 @@
 // variable stored in global memory to track score
-var userScore = 5;
+var userScore = 0;
 
 // variable for starting time of timer until end of game
 var secondsLeft = 65;
 var oldQuestion = 0;
 var newQuestion = 1;
 var responseQ = 0;
-var responseQ2 = 2;
 
 // This is the first viewing page, and will start the timer when the button is clicked
 $("#startQuiz").removeClass("hide");
@@ -17,7 +16,7 @@ $("#start").on("click", function () {
 });
 
 // template literals to run through all the questions hiding and unhiding the html questions
-$("body").on("click", function (event) {
+$("#allQuestions").on("click", function (event) {
   if (event.target.matches("button")) {
     $(`#question_${oldQuestion}`).addClass("hide");
     $(`#question_${newQuestion}`).removeClass("hide");
@@ -33,13 +32,40 @@ $("body").on("click", function (event) {
   } else {
     $(`#rightWrong_${responseQ}`).text("Wrong...");
     responseQ++;
-    userScore -= 5;
     secondsLeft -= 5;
   }
   console.log(userScore);
-  $("#highScores").text(userScore);
+
+  $("#highScores").text("Score: " + userScore);
+
+  // make an if statement with event target matches
+
+  // if (event.target.matches("#submitName"))
 });
 
+$("#submitName").on("click", function () {
+  var name = $("#userName").val().trim();
+
+  console.log(name);
+
+  var savedScore = {
+    name: name,
+    score: userScore,
+  };
+
+  console.log(typeof userScore);
+  localStorage.setItem("Name", JSON.stringify(savedScore));
+  console.log(savedScore);
+  var lastScore = localStorage.getItem("Name");
+
+  $("#scoreList").append("<hr>" + name + ": " + userScore);
+});
+// "<hr>" + name + ": " + userScore
+// $("#endQuiz").removeClass("hide");
+//  {
+//
+//   // need to collect what is also being typed and put into the prepend area with score
+// });
 // counts down timer
 
 function setTime() {

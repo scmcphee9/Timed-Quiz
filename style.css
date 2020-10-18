@@ -1,3 +1,11 @@
 .hide {
   display: none;
 }
+
+body {
+  text-align: center;
+}
+
+/* .time {
+  text-align: right;
+} */

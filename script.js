@@ -15,6 +15,23 @@ $("#start").on("click", function () {
   setTime();
 });
 
+// counts down timer
+function setTime() {
+  var timerInterval = setInterval(function () {
+    // decreases timer by 1
+    secondsLeft--;
+    // selects class time and adds the following text
+    $(".time").text(secondsLeft + " seconds remaining");
+
+    if (secondsLeft === 0) {
+      clearInterval(timerInterval);
+      // When timer =0 this will bring the player to the last screen if they run out of time
+      $("#allQuestions").addClass("hide");
+      $("#question_6").removeClass("hide");
+    }
+  }, 1000);
+}
+
 // template literals to run through all the questions hiding and unhiding the html questions
 $("#allQuestions").on("click", function (event) {
   if (event.target.matches("button")) {
@@ -37,11 +54,9 @@ $("#allQuestions").on("click", function (event) {
   console.log(userScore);
 
   $("#highScores").text("Score: " + userScore);
-
-  // make an if statement with event target matches
-
-  // if (event.target.matches("#submitName"))
 });
+
+var pastScores = "";
 
 $("#submitName").on("click", function () {
   var name = $("#userName").val().trim();
@@ -57,8 +72,15 @@ $("#submitName").on("click", function () {
   localStorage.setItem("Name", JSON.stringify(savedScore));
   console.log(savedScore);
   var lastScore = localStorage.getItem("Name");
+  JSON.parse(lastScore);
 
-  $("#scoreList").append("<hr>" + name + ": " + userScore);
+  pastScores.push(lastScore);
+
+  console.log(lastScore);
+  var lastScoreName = lastScore;
+
+  $("#scoreList").prepend("<hr>" + pastScores.name + ": " + pastScores.score);
+  // $("#scoreList").prepend("<hr>" + name + ": " + userScore);
 });
 // "<hr>" + name + ": " + userScore
 // $("#endQuiz").removeClass("hide");
@@ -66,20 +88,3 @@ $("#submitName").on("click", function () {
 //
 //   // need to collect what is also being typed and put into the prepend area with score
 // });
-// counts down timer
-
-function setTime() {
-  var timerInterval = setInterval(function () {
-    // decreases timer by 1
-    secondsLeft--;
-    // selects class time and adds the following text
-    $(".time").text(secondsLeft + " seconds remaining");
-
-    if (secondsLeft === 0) {
-      clearInterval(timerInterval);
-      // When timer =0 this will bring the player to the last screen if they run out of time
-      $("#allQuestions").addClass("hide");
-      $("#question_6").removeClass("hide");
-    }
-  }, 1000);
-}

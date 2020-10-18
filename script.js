@@ -56,7 +56,7 @@ $("#allQuestions").on("click", function (event) {
   $("#highScores").text("Score: " + userScore);
 });
 
-var pastScores = "";
+// var pastScores = "";
 
 $("#submitName").on("click", function () {
   var name = $("#userName").val().trim();
@@ -74,12 +74,12 @@ $("#submitName").on("click", function () {
   var lastScore = localStorage.getItem("Name");
   JSON.parse(lastScore);
 
-  pastScores.push(lastScore);
+  // pastScores.push(lastScore);
 
   console.log(lastScore);
   var lastScoreName = lastScore;
 
-  $("#scoreList").prepend("<hr>" + pastScores.name + ": " + pastScores.score);
+  $("#scoreList").prepend("<hr>" + savedScore.name + ": " + savedScore.score);
   // $("#scoreList").prepend("<hr>" + name + ": " + userScore);
 });
 // "<hr>" + name + ": " + userScore

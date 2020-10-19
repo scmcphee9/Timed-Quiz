@@ -56,19 +56,24 @@ $("#allQuestions").on("click", function (event) {
   $("#highScores").text("Score: " + userScore);
 });
 
-// var pastScores = "";
+// this is when the submit button is pushed to enter players name and score.
+//  It sends it to local memory and store it there for the future players to see where they rank.
+
+// var pastScores = [];
 
 $("#submitName").on("click", function () {
   var name = $("#userName").val().trim();
 
   console.log(name);
 
+  // Varaible to store both name and score as an object
   var savedScore = {
     name: name,
     score: userScore,
   };
 
   console.log(typeof userScore);
+  // sets key to name and value as string (showing a problem with score showing a number)
   localStorage.setItem("Name", JSON.stringify(savedScore));
   console.log(savedScore);
   var lastScore = localStorage.getItem("Name");
@@ -76,15 +81,66 @@ $("#submitName").on("click", function () {
 
   // pastScores.push(lastScore);
 
-  console.log(lastScore);
-  var lastScoreName = lastScore;
+  console.log("lastscore" + lastScore); // still showing score as a numer rather than a string...
 
-  $("#scoreList").prepend("<hr>" + savedScore.name + ": " + savedScore.score);
+  // var lastScoreName = lastScore;
+
+  $("#scoreList").prepend("<li>" + savedScore.name + ": " + savedScore.score);
+
+  // this is what I want it to write and save, but showing undefined
+  // $("#scoreList").prepend("<li>" + lastScore.name + ": " + lastScore.score);
   // $("#scoreList").prepend("<hr>" + name + ": " + userScore);
 });
-// "<hr>" + name + ": " + userScore
-// $("#endQuiz").removeClass("hide");
-//  {
-//
-//   // need to collect what is also being typed and put into the prepend area with score
+
+// ------------------------------------
+// this code was another method I was using to try and get the local memory to work properly
+
+// var pastNames = [];
+
+// init();
+
+// function renderScores() {
+//   for (var i = 0; i < pastScores.length; i++) {
+//     var pastName = pastNames[i];
+
+//     var li = document.createElement("li");
+//     li.textContent = pastName;
+//     li.setAttribute("name", i);
+//     // $("#scoreList").append("<li>" + pastScore)
+//     $("#scoreList").append(li);
+//   }
+// }
+
+// function init() {
+//   var storedName = JSON.parse(localStorage.getitem("pastNames"));
+
+//   if (storedName !== null) {
+//     pastNames = storedName;
+//   }
+// }
+
+// function storeScores() {
+//   localStorage.setItem("Name", JSON.stringify(pastScores));
+// }
+
+// $("#submitName").on("click", function () {
+//   var name = $("#userName").val().trim();
+
+//   if (name === "") {
+//     return;
+//   }
+
+//   pastScores.push(name);
+//   // $("#userName").val() = "";
+
+//   storeScores();
+//   renderScores();
 // });
+
+//
+//
+//
+//
+//
+//
+// ---------------------------------------------------

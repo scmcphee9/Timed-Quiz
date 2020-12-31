@@ -67,25 +67,37 @@ $("#submitName").on("click", function () {
   console.log(name);
 
   // Varaible to store both name and score as an object
+
+  // cap to number of items in array
+  // highest scores first
+
+  const savedArr = JSON.parse(localStorage.getItem("Name")) || [];
+
   var savedScore = {
     name: name,
     score: userScore,
   };
 
   console.log(typeof userScore);
+
+  savedArr.push(savedScore);
   // sets key to name and value as string (showing a problem with score showing a number)
-  localStorage.setItem("Name", JSON.stringify(savedScore));
+  localStorage.setItem("Name", JSON.stringify(savedArr));
   console.log(savedScore);
-  var lastScore = localStorage.getItem("Name");
-  JSON.parse(lastScore);
+
+  // var lastScore = localStorage.getItem("Name");
 
   // pastScores.push(lastScore);
 
-  console.log("lastscore" + lastScore); // still showing score as a numer rather than a string...
+  //console.log("lastscore" + lastScore); // still showing score as a numer rather than a string...
 
   // var lastScoreName = lastScore;
 
-  $("#scoreList").prepend("<li>" + savedScore.name + ": " + savedScore.score);
+  savedArr.forEach((arrayItems) => {
+    $("#scoreList").prepend("<li>" + arrayItems.name + ": " + arrayItems.score);
+
+    console.log(arrayItems);
+  });
 
   // this is what I want it to write and save, but showing undefined
   // $("#scoreList").prepend("<li>" + lastScore.name + ": " + lastScore.score);

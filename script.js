@@ -59,7 +59,7 @@ $("#allQuestions").on("click", function (event) {
 // this is when the submit button is pushed to enter players name and score.
 //  It sends it to local memory and store it there for the future players to see where they rank.
 
-// var pastScores = [];
+
 
 $("#submitName").on("click", function () {
   var name = $("#userName").val().trim();
@@ -85,13 +85,6 @@ $("#submitName").on("click", function () {
   localStorage.setItem("Name", JSON.stringify(savedArr));
   console.log(savedScore);
 
-  // var lastScore = localStorage.getItem("Name");
-
-  // pastScores.push(lastScore);
-
-  //console.log("lastscore" + lastScore); // still showing score as a numer rather than a string...
-
-  // var lastScoreName = lastScore;
 
   savedArr.forEach((arrayItems) => {
     $("#scoreList").prepend("<li>" + arrayItems.name + ": " + arrayItems.score);
@@ -99,60 +92,6 @@ $("#submitName").on("click", function () {
     console.log(arrayItems);
   });
 
-  // this is what I want it to write and save, but showing undefined
-  // $("#scoreList").prepend("<li>" + lastScore.name + ": " + lastScore.score);
-  // $("#scoreList").prepend("<hr>" + name + ": " + userScore);
+ 
 });
 
-// ------------------------------------
-// this code was another method I was using to try and get the local memory to work properly
-
-// var pastNames = [];
-
-// init();
-
-// function renderScores() {
-//   for (var i = 0; i < pastScores.length; i++) {
-//     var pastName = pastNames[i];
-
-//     var li = document.createElement("li");
-//     li.textContent = pastName;
-//     li.setAttribute("name", i);
-//     // $("#scoreList").append("<li>" + pastScore)
-//     $("#scoreList").append(li);
-//   }
-// }
-
-// function init() {
-//   var storedName = JSON.parse(localStorage.getitem("pastNames"));
-
-//   if (storedName !== null) {
-//     pastNames = storedName;
-//   }
-// }
-
-// function storeScores() {
-//   localStorage.setItem("Name", JSON.stringify(pastScores));
-// }
-
-// $("#submitName").on("click", function () {
-//   var name = $("#userName").val().trim();
-
-//   if (name === "") {
-//     return;
-//   }
-
-//   pastScores.push(name);
-//   // $("#userName").val() = "";
-
-//   storeScores();
-//   renderScores();
-// });
-
-//
-//
-//
-//
-//
-//
-// ---------------------------------------------------

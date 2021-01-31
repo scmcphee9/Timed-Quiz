@@ -2,10 +2,70 @@
   display: none;
 }
 
-body {
+/* body {
   text-align: center;
-}
+} */
 
 /* .time {
   text-align: right;
 } */
+.quizbox {
+  text-align: center;
+  background-color: beige;
+  opacity: 90%;
+  justify-content: space-evenly;
+  padding-top: 50px;
+  margin-top: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-bottom: 2000px; */
+  /* list-style: none; */
+  max-width: 34.3%;
+  font-size: 22px;
+  font-weight: bold;
+  /* position: absolute; */
+  text-align: center;
+  text-shadow: 1px 1px 1px black;
+  color: green;
+  max-width: 34.3%;
+  /* padding-top: 260px; */
+}
+
+.button {
+  background-image: linear-gradient(yellow, #c26c0a);
+  color: black;
+  font-weight: bold;
+  padding: 8px;
+  border-radius: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 35px;
+}
+.button:hover {
+  background-color: #c26c0a;
+  color: white;
+}
+
+.background {
+  /* Set rules to fill background */
+  min-height: 100%;
+  min-width: 1024px;
+
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  .background {
+    left: 50%;
+    margin-left: -512px; /* 50% */
+  }
+}
